@@ -1,0 +1,174 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(145deg, #07111f, #102b46);
+    color: #eaf6ff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+header {
+    padding: 45px 20px 25px;
+}
+
+header h1 {
+    font-size: 2.4rem;
+    letter-spacing: -1px;
+}
+
+header h1 span {
+    color: #55c8ff;
+}
+
+header p {
+    color: #91b5d0;
+    margin-top: 12px;
+}
+
+main {
+    width: min(90%, 650px);
+    margin: 25px auto;
+}
+
+.meter-card,
+.weather-card {
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(130, 205, 255, 0.15);
+    border-radius: 22px;
+    padding: 30px;
+    margin-bottom: 22px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.eyebrow {
+    color: #91b5d0;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.gauge {
+    --progress: 0%;
+    width: 235px;
+    height: 235px;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    display: grid;
+    place-items: center;
+    background: conic-gradient(
+        #55c8ff var(--progress),
+        #203b55 var(--progress)
+    );
+    transition: background 1.2s ease;
+    box-shadow: 0 0 35px rgba(85, 200, 255, 0.15);
+}
+
+.gauge-inner {
+    width: 205px;
+    height: 205px;
+    border-radius: 50%;
+    background: #0b1c30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gauge-inner h2 {
+    font-size: 3.5rem;
+    color: #65d0ff;
+}
+
+.gauge-inner p {
+    color: #a4c5df;
+    margin-top: 5px;
+}
+
+.location {
+    color: #b5d8ee;
+    margin: 15px 0;
+}
+
+.disclaimer {
+    color: #718da6;
+    font-size: 0.75rem;
+}
+
+.weather-card h2 {
+    margin-bottom: 25px;
+}
+
+.weather-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.weather-item span {
+    font-size: 2rem;
+}
+
+.weather-item h3 {
+    margin: 12px 0 5px;
+    color: #65d0ff;
+}
+
+.weather-item p {
+    color: #91b5d0;
+    font-size: 0.85rem;
+}
+
+footer {
+    padding: 25px;
+    color: #718da6;
+}
+
+.snowflake {
+    position: fixed;
+    top: -15px;
+    color: #d9f4ff;
+    opacity: 0.5;
+    pointer-events: none;
+    animation: snowfall linear infinite;
+    z-index: -1;
+}
+
+@keyframes snowfall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+@media (max-width: 450px) {
+    header h1 {
+        font-size: 1.9rem;
+    }
+
+    .meter-card,
+    .weather-card {
+        padding: 22px 15px;
+    }
+
+    .gauge {
+        width: 205px;
+        height: 205px;
+    }
+
+    .gauge-inner {
+        width: 175px;
+        height: 175px;
+    }
+
+    .gauge-inner h2 {
+        font-size: 3rem;
+    }
+}
+
