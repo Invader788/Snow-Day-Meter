@@ -72,7 +72,7 @@ function createSnowflakes() {
         const snowflake = document.createElement("div");
 
         snowflake.className = "snowflake";
-        snowflake.textContent = "Snow Day";
+        snowflake.textContent = "O";
 // Change for snow particle
         snowflake.style.left =
             Math.random() * 100 + "vw";
