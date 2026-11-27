@@ -33,15 +33,15 @@ async function updateMeter() {
         let status;
 
         if (probability >= 80) {
-            status = "Very Likely";
+            status = "Possible Snow Day";
         } else if (probability >= 60) {
-            status = "Looking Promising";
+            status = "Maybe";
         } else if (probability >= 40) {
-            status = "It's Possible";
+            status = "Not Very Likely";
         } else if (probability >= 20) {
             status = "Unlikely";
         } else {
-            status = "Probably School";
+            status = "School";
         }
 
         statusElement.textContent = status;
@@ -72,8 +72,8 @@ function createSnowflakes() {
         const snowflake = document.createElement("div");
 
         snowflake.className = "snowflake";
-        snowflake.textContent = "•";
-
+        snowflake.textContent = "Snow Day";
+// Change for snow particle
         snowflake.style.left =
             Math.random() * 100 + "vw";
 
